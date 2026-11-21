@@ -1,0 +1,18 @@
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                echo 'Project retrieved from GitHub'
+            }
+        }
+
+        stage('Build Maven') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+    }
+}
